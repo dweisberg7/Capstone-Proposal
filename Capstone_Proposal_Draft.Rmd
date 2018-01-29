@@ -1,0 +1,73 @@
+---
+title: "Capstone Proposal"
+author: "Dan W."
+date: "1/18/2018"
+output: html_document
+---
+What is the problem you want to solve?
+Environmental damage continues at an unprecedented rate. I wish to solve the problem of these damages happening outside of public view. Surely if there are really bad actors in business, the public should know who they are. After I identify the 10-25 worst environmental offenders, I will plot each of their fine #’s and amounts over the past 17 years to determine if total fines are on the rise or decline. My goal will be to answer when are fines “impactful” meaning that a fine in one year leads to a significant reduction in fines over the following 3 years; and are impactful fines related to the “size” of a company measured in terms of both Revenue and Market Value (for public companies) during the year when the when the “impactful” fine occurred? 
+
+I am interested to further explore creating a 4-5 tier ranking system across environmental violators to put them into general categories.
+
+As well as identifying which industries produce the greatest number and amount of environmental violations? (both total as well as since 2010) Providing 2 separate pie graphs.
+
+Answering these questions seems especially pertinent with recent attempts to downsize and realign the EPA. 
+
+Who is your client and why do they care about this problem? In other words, what will your client DO or DECIDE based on your analysis that they wouldn’t have otherwise?
+
+My client is the public, or more specifically the informed reader on climate change and environmental policy. While the EPA does fine a large number of companies, the public has little access to seeing how effective and which industries comprise the majority of these fines. Additionally, the report may be of interest to investors in the companies identified as top environmental violators.
+
+If there is a pattern such as a small % of companies accounting for a big % of violations, that would suggest that fines may often not be enough to impact these very large companies behavior.((I will try to determine the % of a company’s Revenue/Market Value that tends to result in an “impactful” reduction in future behavior, I can make a recommendation to a regulatory agency such as the EPA to “scale” the recommended violation amounts based upon company’s “size” measured in both Revenue and Market Value.
+
+If I can create fairly defined categories of environmental conduct. Companies that are “near the line” will hopefully be encouraged to step up.
+
+Companies that sit in the worst 20-25% category can become marked as Environmental Big Polluters. Which serves as a signal to investors to be cautious. In the long run companies more prone to large fines will suffer economic and PR costs that could translate to a less reliable long term investment.
+
+What data are you going to use for this? How will you acquire this data?
+
+Violation Tracker list of all companies with environmental violations, # of violations, and amount since 2000 as reported  years from 2000-2017
+
+“Violation Tracker is the first national search engine on corporate misconduct. It covers banking, consumer protection, false claims, environmental, wage & hour, unfair labor practice, health, safety, employment discrimination, price-fixing, bribery and other cases initiated by 43 federal regulatory agencies and the Justice Department since 2000; in all, 300,000 civil and criminal cases with total penalties of more than $400 billion.”
+
+https://www.goodjobsfirst.org/violation-tracker
+
+I will bolster this data through gathering publicly available company Revenue and Market Value data for the biggest 10-25 offenders since 2000.
+
+In brief, outline your approach to solving this problem (knowing that this might change later).
+I plan search violation tracker by category and select only environmental. Then start with some basic analysis. I will separate the overall environmental offenses into quartiles. Report overall minimum and maximum violation amounts, as well as mean, median, and mode to provide a sense of what fines typically are. Also, I will create a linear graph charting overall offenses in dollars across the past 17 years since 2000.
+
+Next, I will create pie charts showing industry % breakdowns across all environmental violations to give a picture of the big industries (Oil and Gas, Utilities and Energy, ect). May want to aggregate by industry.
+
+Next I will identify who the TOP 25 polluters are through an easy data base search. Once identified, I will use R to calculate what percentage of total environmental violations are caused by this small group both in terms of # and amount. I assume, although I don't know, that there will be a large % of total fine amounts falling within a relatively small number of companies. Either way, the distribution should be revealing.((Using the public companies on this top polluters list, I will try to understand what seems to affect these polluters to decrease future behavior.  Showing the linear trend in fine amounts for each of the Top polluters across 17 years should hopefully reveal some interesting trends. I will attempt to identify “impactful” fines measured as fines that created at least a 50% reduction in fines over the next 3 years. [****I’m unsure about the underlined and how to effectively identify “impactful” fines.****]
+
+
+What are your deliverables? Typically, this would include code, along with a paper and/or a slide deck.
+
+My deliverables will likely be a paper/blog/journal article describing interesting information about environmental offense violators; along with appropriate Git hub and RMarkdown documentation.
+
+Once the worst 10-25 polluters have been identified based on number of violations and total amount in violations, respectively. I will summarize what an “impactful” fine is, I will attempt to measure what % of fines were “impactful” among top polluters and prepare a recommendation statement for the EPA to encourage judges to scale violation charges to amounts that have been proven to be impactful I.E. X% of company revenue & market value make a difference in future behavior with respect to company size.
+
+As a follow up analysis I will discuss if it seems like any companies/industries are “immune” to fines or particularly in need of larger fines.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
